@@ -69,3 +69,6 @@ function buildGauge(wfreq) {
 
 }
 
+// References:
+
+// for gauge chart: https://com2m.de/blog/technology/gauge-charts-with-plotly/
