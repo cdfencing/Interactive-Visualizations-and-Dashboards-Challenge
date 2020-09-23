@@ -36,10 +36,7 @@ function buildGauge(wfreq) {
             text: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
             textinfo: "text",
             textposition: "inside",
-            markers: {
-                colors: [
-                    '','','','','','','','','','white'],
-             },
+            marker: {colors:['#6F826E','#89B28A','#8BC187','#B7CD8F','#D5E59A','#E5E8B1','#E7E6C8','#F2F0E3','#F8F4EB','#FFFFFF',]},
             labels: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
             hoverinfo: "label",
             hole: 0.5,
@@ -71,3 +68,4 @@ function buildGauge(wfreq) {
     Plotly.newPlot(Gauge, data, layoutG);
 
 }
+
