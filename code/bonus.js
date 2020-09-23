@@ -9,10 +9,10 @@ function buildGauge(wfreq) {
     var radians = (degrees * Math.PI) / 180;
     var x = radius * Math.cos(radians);
     var y = radius * Math.sin(radians);
-
+    var path1 = (degrees < 45 || degrees > 135) ? 'M -0.0 -0.025 L 0.0 0.025 L ' : 'M -0.025 -0.0 L 0.025 0.0 L ';
 
     // Now let make a better triangle 
-    var mainPath = "M -.0 -0.05 L .0 0.05 L";
+    var mainPath = path1;
     var pathX = String(x);
     var space = " ";
     var pathY = String(y);
@@ -33,16 +33,14 @@ function buildGauge(wfreq) {
         {
             values: [50/9,50/9,50/9,50/9,50/9,50/9,50/9,50/9,50/9,50],
             rotation: 90,
-            text: ["8-9", "7-8", ""],
+            text: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
             textinfo: "text",
             textposition: "inside",
             markers: {
                 colors: [
-                    "rgba(0,105,11,.5)",
-
-                ]
-            },
-            labels: ["8-9", "7-8", ""],
+                    '','','','','','','','','','white'],
+             },
+            labels: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
             hoverinfo: "label",
             hole: 0.5,
             type: "pie",
@@ -50,9 +48,26 @@ function buildGauge(wfreq) {
         }
     ];
 
-    //var layoutG
+    var layoutG ={
+        shapes:[{
+            type: 'path',
+            path: path,
+            fillcolor: '850000',
+            line: {
+              color: '850000'
+            }
+          }],
+        height: 500,
+        width: 500,
+        title: "Belly Button Washing Frequency: Scrubs per Week",
+        margin: {t: 50, l: 150},
+        xaxis: {zeroline:false, showticklabels:false,
+            showgrid: false, range: [-1, 1]},
+        yaxis: {zeroline:false, showticklabels:false,
+            showgrid: false, range: [-1, 1]}
+      };
 
     var Gauge = document.getElementById("gauge");
-    Plotly.newPlot(Gauge, data);
+    Plotly.newPlot(Gauge, data, layoutG);
 
 }

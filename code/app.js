@@ -41,22 +41,6 @@ function buildCharts(sample) {
 
     // Build a horizontal bar chart
 
-    // result = [];
-    // for (var i = 0; i < otu_ids.length; i++) {
-    //   result.push({"otu_ids": otu_ids[i], "otu_labels": otu_labels[i], "sample_values": sample_values[i]});
-    // };
-    // result.sort((a, b) => b.sample_values - a.sample_values);
-    // result = result.slice(0, 10);
-    // console.log(result);
-
-    // var trace1 = {
-    //   values: result.map(row => row.sample_values),
-    //   labels: result.map(row => row.otu_ids),
-    //   hovertext: result.map(row => row.otu_labels),
-    //   type: "bar",
-    //   orientation: "h"
-    // };
-    // var barChart = [trace1];
     var barChart = [
       {
         y: otu_ids.slice(0 ,10).map(otuID => `OTU ${otuID}`).reverse(),
@@ -98,12 +82,6 @@ function buildCharts(sample) {
     };
     var bubbleChart = [trace2];
     Plotly.newPlot("bubble", bubbleChart, bubbleLayout);
-
-    // // Optional BONUS: Build Gauge Chart
-    // const washDataURL = "/wfreq/" + sample;
-    // d3.json(washDataURL).then(function(data){
-    //   buildGauge(data.WFREQ);
-    // });
 
   });
 }
