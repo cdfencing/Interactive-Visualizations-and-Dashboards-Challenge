@@ -1,5 +1,9 @@
 # Interactive-Visualizations-and-Dashboards-Challenge
 
+Please refer to the following link:
+
+https://cdfencing.github.io/Interactive-Visualizations-and-Dashboards-Challenge/
+
 Plot.ly Homework - Belly Button Biodiversity
 
 In this assignment, you will build an interactive dashboard to explore the Belly Button Biodiversity dataset, which catalogs the microbes that colonize human navels.
